@@ -15,6 +15,17 @@ public class UsuarioBean {
 	private List<Usuario> lista;
 	private String destinoSalvar;
 	
+	public String atribuiPermissao(Usuario usuario, String permissao){
+		this.usuario= usuario;
+		java.util.Set<String> permissoes= this.usuario.getPermissao();
+		if(permissoes.contains(permissao)){
+			permissoes.remove(permissao);
+		}else{
+			permissoes.add(permissao);
+		}
+		return null;
+	}
+	
 	public String novo(){
 		this.destinoSalvar="usuariosucesso";
 		this.usuario=new Usuario();

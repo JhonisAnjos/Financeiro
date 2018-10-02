@@ -7,12 +7,10 @@
 	<session-factory>	    
 	    <!-- Configuração da conexão com o banco MySQL e dialeto -->
 	    <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property> <!-- DB Dialect -->
-   		<property name="connection.url">jdbc:mysql://localhost/financeiro</property> <!-- BD Mane -->
-   		<property name="connection.driver_class">com.mysql.jdbc.Driver</property> <!-- DB Driver -->
-   		<property name="connection.username">root</property> <!-- DB User -->
-   		<property name="connection.password"></property> <!-- DB Password -->
    		<property name="current_session_context_class">thread</property>
    		<property name="hibernate.hbm2ddl.auto">update</property>
+   		
+   		<property name="connection.datasource">java:/comp/env/jdbc/FinanceiroDB</property>
    		
    		<!-- Configuração de debug -->
    		<property name="show_sql">true</property>

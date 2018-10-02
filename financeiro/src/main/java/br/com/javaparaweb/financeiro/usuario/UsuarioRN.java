@@ -18,6 +18,7 @@ public class UsuarioRN {
 	public void Salvar(Usuario usuario){
 		Integer codifo= usuario.getCodigo();
 		if(codifo==null||codifo==0){
+			usuario.getPermissao().add("ROLE_USUARIO");
 			this.usuarioDAO.salvar(usuario);
 		}else{
 			this.usuarioDAO.atualizar(usuario);
