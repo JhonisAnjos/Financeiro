@@ -11,6 +11,17 @@
 	Usuário logado #{request.remoteUser} 
 	<br />
 	<h:form>
+
+		<h:commandButton value="Conta" action="/restrito/conta" />
+
+		<h:selectOneMenu value="#{contextoBean.contaAtiva.conta}"
+			valueChangeListener="#{contextoBean.changeContaAtiva}"
+			rendered="#{not empty contextoBean and not empty contextoBean.contaAtiva}"
+			onchange="submit()">
+			<f:selectItems value="#{contaBean.lista}" var="conta"
+				itemValue="#{conta.conta}" itemLabel="#{conta.descricao}" />
+		</h:selectOneMenu>
+
 		<!-- 
 		Desde 02/06/2016 a biblioteca facelets-taglib-jsf20-spring-3
 		foi removida do repositorio do GoogleCode e ainda não foi 

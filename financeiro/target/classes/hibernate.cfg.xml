@@ -18,6 +18,7 @@
    		<property name="generate_statistics">true</property>
    		<property name="use_sql_comments"></property>
    		<!-- Mapeando classes -->
-   		<mapping class="br.com.javaparaweb.financeiro.usuario.Usuario"/>		
+   		<mapping class="br.com.javaparaweb.financeiro.usuario.Usuario"/>
+   		<mapping class="br.com.javaparaweb.financeiro.conta.Conta"/>		
    	</session-factory>
 </hibernate-configuration>
